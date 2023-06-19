@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="jp">
 <head><?php
-ini_set('display_errors', 1);
+ini_set('display_errors', 1);//errorの部分に１が表示されるようになる
 ?>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +9,6 @@ ini_set('display_errors', 1);
     <title>PHP練習</title>
 </head>
 <body>
-    <?php echo "Hello world"; ?>
+    <h1><?= "Hello world"; ?></h1>
 </body>
 </html>
