@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascriptの学習</title>
+</head>
+<body>
+    <script>
+        let greeting = 'HELLO';
+        const name = 'TECH I.S.';
+        alert(greeting + name);//PHPでは文字列や変数を連結するときは「.(ドット)」を使用しましたが、JavaScriptでは「+(プラス)」を使うことで連結することができます。
+        console.log('hello world');
+        console.log(5+19);
+        var hoge = "varで定義";//
+    console.log(hoge);  // varで定義 が出力される（関数スコープ）
+    
+    // ----------------------------------------
+    if (true) {
+    var fuga = "ifの中で定義";
+    }
+    console.log(fuga); // ifの中で定義が出力される
+    // ----------------------------------------
+    var fuga = "最初の宣言";
+    var fuga = "2回目の宣言";
+    console.log(fuga);  // 2回目の宣言が出力される（上書きされる）
+    let hoge1 = "letで定義";//ブロックスコープ
+    hoge1 = "値を変えた";
+    console.log(hoge1); // 値を変えた が出力される
+    const hoge2 = "定数";//ブロックスコープ
+    //hoge2 = "値変えたい"; // constの定義に対して値を入れようとしているため、エラーとなる
+    
+    
+    var a = 1000;
+    while(a >= 0) {
+        console.log(a);
+        a -=1;
+    }
+    
+    
+    var info = {名前 :'山田',住所:'愛媛',年齢:'20歳'}
+    Object.keys(info).forEach(function(tag){//Object.keysメソッドを使い、連想配列のkeyのみを配列で取得し、コールバック関数の引数keyで一つずつ受け取る。
+        console.log(tag+'='+info[tag])//取得した配列をforEachでループする
+    });
+    
+    
+    var list = new Array('山田', '愛媛', '20才');
+    list.forEach(function(info1){
+        console.log(info1);
+    });
+
+    var lists = [
+        {名前: '山田', 住所: '愛媛', 年齢: '20才'},
+        {名前: '井上', 住所: '香川', 年齢: '36才'},
+        {名前: '佐藤', 住所: '高知', 年齢: '42才'}
+    ];//[[]]はできない test_lists = new Array([])はできる
+    for(let i=0; i<lists.length; i++) {
+        Object.keys(lists[i]).forEach(function(info3){
+            console.log(info3 + '=' + lists[i][info3]);
+        });
+    }//forはループの一番最初に増減式が処理されることに注意！
+//javascriptは関数の掛け算？は「.」で行い、結合は「＋」で行う
+//（phpでは関数の掛け算？は「,」で行い、結合は「.」で行う）
+//Pythonでは関数の掛け算？は関数の（）で括ることによって行われ、結合は「＋」で行う
+
+let syoukei1 = 2000;
+
+function Zeikomi(syoukei10, zeiritu = '1.1') {
+return syoukei10 * zeiritu;
+}
+
+// 第二引数を指定しない場合、デフォルトで指定されている税率に(消費税10%)
+console.log(Zeikomi(syoukei1)); // 2,200
+
+// 第二引数を指指定すると指定した税率に(消費税20%)
+console.log(Zeikomi(syoukei1, '1.2')); // 2,400
+
+
+</script>
+
+</body>
+</html>

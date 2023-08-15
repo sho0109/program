@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>イベントの練習</title>
+<style>
+    .box {
+        width: 100px;
+        height: 100px;
+        background: skyblue;
+        cursor: pointer;
+        transition: 0.8s;
+        }
+    .circle {
+        background: pink;
+        border-radius: 50%;
+        transform: rotate(360deg);
+        }
+</style>
+</head>
+<body>
+    <h1>クリックイベント</h1>
+    クリックするとcircleのクラスを追加する(boxクラスにCSSをcircleのクラスのCSSで上書きする(クラス自体は上書きされない))クリックイベント
+    <div class='box' id="target"></div> <!-- 青い四角形 -->
+
+<!-- </body>タグの直前に書く -->
+    <script>
+        "use strict"; //'use strict'; は宣言しておくとより的確なエラーのチェックをしてくれます。
+        document.getElementById('target').addEventListener('click',()=>{// document.getElementById('target')で()内の要素を取得した→その後「.」でつなげることにより取得した要素に対する処理を行う(関数の掛け算？)その次にaddEventlistenerの第一引数の操作をaddEventlistenerの対象に行うことより、第二引数の処理が実行される
+            document.getElementById('target').classList('circle');//取得した要素に対してクラスを追加した→CSSの上書き
+        });//このときid無しで、boxとcircleだけにしてtargetの部分をboxに置き換えてもできる。(練習として入れただけ)
+    </script>
+</body>
+</html>

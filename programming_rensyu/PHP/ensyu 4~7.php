@@ -54,3 +54,40 @@ echo  "<div style='color:{$color[$key]}'>{$color_name[$key]}</div>";
 
 echo '<br>';
 
+//関数演習問題
+function myTodaySring  ($Month,$Day) {
+    $week = date('w', strtotime('2023/6/19'));
+    $weeks = ['日','月','火','水','木','金','土'];
+    if ($Month == True) {
+        echo $Month.'月'.$Day.'日('.$weeks[$week].')';
+    }
+    else{
+        echo $Month.'月'.$Day.'日';
+    }
+}
+
+//今日の日付の取得
+$month = date('n', strtotime('2023/6/19'));
+$day = date('j', strtotime('2023/6/19'));
+//今日の日付の表示
+myTodaySring  ($month,$day);
+
+echo '<br>';
+
+
+//もっと簡単にできる
+function myTodaySring_2 ($flag = False) {
+    echo date ('m月d日');
+    if ($flag ){   //ifで引数の値が設定されていないときは引数=True という意味になる
+        $weeks_2 = ['日','月','火','水','木','金','土'];
+        echo '('.$weeks_2[date('w')].')';
+    }
+}
+
+echo myTodaySring_2  (True);
+
+echo '<br>';
+
+echo myTodaySring_2 ();
+
+echo '<br>';
